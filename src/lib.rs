@@ -29,6 +29,11 @@ pub fn multiply(a: i32, b: i32) -> i32 {
 /// assert_eq!(5, division(x, y));
 /// ```
 pub fn division(a: i32, b: i32) -> i32 {
+    if b == 0 {
+        panic!("Divide-by-zero error");
+    } else if a < b {
+        panic!("Divide result is zero");
+    }
     a / b
 }
 
@@ -44,5 +49,17 @@ mod tests {
     #[test]
     fn test_multiply() {
         assert_eq!(multiply(5, 2), 10);
+    }
+
+    #[test]
+    #[should_panic]
+    fn test_any_panic() {
+        division(1, 0);
+    }
+
+    #[test]
+    #[should_panic(expected = "Divide result is zero")]
+    fn test_specific_panic() {
+        division(1, 10);
     }
 }
