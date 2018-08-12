@@ -3,7 +3,20 @@ pub fn add(a: i32, b: i32) -> i32 {
 }
 
 pub fn substract(a: i32, b: i32) -> i32 {
-    a - b
+    a * b
+}
+
+/// # Examples
+///
+/// ```
+/// use example::multiply;
+///
+/// let x = 5;
+/// let y = 6;
+/// assert_eq!(30, multiply(x, y));
+/// ```
+pub fn multiply(a: i32, b: i32) -> i32 {
+    a * b
 }
 
 #[cfg(test)]
@@ -13,5 +26,10 @@ mod tests {
     #[test]
     fn test_add() {
         assert_eq!(add(1, 2), 3);
+    }
+    
+    #[test]
+    fn test_multiply() {
+        assert_eq!(multiply(5, 2), 10);
     }
 }
