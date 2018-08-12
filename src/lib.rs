@@ -19,6 +19,19 @@ pub fn multiply(a: i32, b: i32) -> i32 {
     a * b
 }
 
+/// # Examples
+///
+/// ```
+/// use example::division;
+///
+/// let x = 30;
+/// let y = 6;
+/// assert_eq!(5, division(x, y));
+/// ```
+pub fn division(a: i32, b: i32) -> i32 {
+    a / b
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
